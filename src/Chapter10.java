@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -19,10 +18,9 @@ public class Chapter10 {
         System.out.println("未完了のタスクの個数は"+false_count);
         System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
         
-        Collections.sort(list);
-        
         list.stream()
         	.filter( l -> l.isDone() == false)
+        	.sorted()
             .forEach(System.out::println);
 
     }	
